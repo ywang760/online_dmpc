@@ -5,30 +5,42 @@ import os
 import sys
 
 
-def process_obstacle(obstacle_file_path):
+def process_obstacle(obstacle_file_path, r_obs=1.0, height_scaling_obs=1.0):
+    # Model the obstacle as a union of spheres with radius rmin_obs and height_scaling_obs
     obstacle_mesh = mesh.Mesh.from_file(obstacle_file_path)
 
     # Assuming each cube is represented by 8 vertices
     n_cubes = len(obstacle_mesh.vectors) // 12  # Each cube has 12 triangles
+    d_obs = 2 * r_obs
+    h_obs = 2 * r_obs * height_scaling_obs
 
     cube_centers = []
 
     for i in range(n_cubes):
         # Extract the vertices of the current cube
         cube_vertices = obstacle_mesh.vectors[i * 12 : (i + 1) * 12].reshape(-1, 3)
-        # Calculate the centroid of the cube
-        centroid = np.mean(cube_vertices, axis=0).tolist()
-        centroid = [round(x, 2) for x in centroid]
-        cube_centers.append(centroid)
-
-    rmin_obs_x = np.abs(cube_vertices[0][0] - cube_centers[-1][0])
-    rmin_obs_y = np.abs(cube_vertices[0][1] - cube_centers[-1][1])
-    assert np.allclose(
-        rmin_obs_x, rmin_obs_y
-    ), f"rmin_obs_x: {rmin_obs_x}, rmin_obs_y: {rmin_obs_y} is not close"
-    rmin_obs = rmin_obs_x
-    height_scaling_obs = np.abs(cube_vertices[0][2] - cube_centers[0][2]) / rmin_obs
-    return cube_centers, round(rmin_obs, 2), height_scaling_obs
+        xmin, xmax = np.min(cube_vertices[:, 0]), np.max(cube_vertices[:, 0])
+        ymin, ymax = np.min(cube_vertices[:, 1]), np.max(cube_vertices[:, 1])
+        zmin, zmax = np.min(cube_vertices[:, 2]), np.max(cube_vertices[:, 2])
+        print(f"Cube {i}: xmin={xmin}, xmax={xmax}, ymin={ymin}, ymax={ymax}, zmin={zmin}, zmax={zmax}")
+        length, width, height = xmax - xmin, ymax - ymin, zmax - zmin
+        print(f"Cube {i}: dx={length}, dy={width}, dz={height}")
+        count_x = int(np.ceil(length / d_obs))
+        count_y = int(np.ceil(width / d_obs))
+        count_z = int(np.ceil(height / h_obs))
+        print(f"Cube {i}: count_x={count_x}, count_y={count_y}, count_z={count_z}")
+        count = count_x * count_y * count_z
+        
+        # Calculate the centers of the smaller spheres
+        x = np.linspace(xmin + r_obs, xmax - r_obs, count_x)
+        y = np.linspace(ymin + r_obs, ymax - r_obs, count_y)
+        z = np.linspace(zmin + r_obs, zmax - r_obs, count_z)
+        xx, yy, zz = np.meshgrid(x, y, z)
+        centers = np.vstack([xx.ravel(), yy.ravel(), zz.ravel()]).T
+        assert len(centers) == count, f"Count mismatch: {len(centers)} != {count}"
+        cube_centers.extend(centers.tolist())
+        
+    return cube_centers, r_obs, height_scaling_obs
 
 
 def process_largescale_config(
@@ -90,11 +102,12 @@ def process_largescale_config(
     output_file_path = output_file_path or "config_updated.json"
     with open(output_file_path, "w") as f:
         json.dump(dmpc_original_config, f, indent=4)
+    print(f"Updated config file saved at {output_file_path}")
 
 
 if __name__ == "__main__":
     process_largescale_config(
-        largescale_simulation_config_path="Swap48/simulation_config_swap.json",
+        largescale_simulation_config_path="SwapClose48/simulation_config_swap.json",
         dmpc_original_config_path="config.json",
-        output_file_path="config_Swap48.json",
+        output_file_path="config_SwapClose48.json",
     )

@@ -113,11 +113,18 @@ def visualize_config(config_path, obstacle_stl_path=None):
 
     if obstacle_stl_path:
         plot_obstacle(obstacle_stl_path, ax)  # Cross validate with the obstacle file
+
+    ax.set_xlabel("x")
+    ax.set_ylabel("y")
+    ax.set_zlabel("z")
+    ax.set_xlim(-6, 6)
+    ax.set_ylim(-6, 6)
+    ax.set_zlim(0, 12)
     plt.show()
 
 
 if __name__ == "__main__":
-    visualize_config(
-        "config_Swap48.json",
-        obstacle_stl_path="Swap48/two_columns.stl",
-    )
+    instance_name = "SwapClose48"  # TODO: change this
+    config_path = f"config_{instance_name}.json"
+    obstacle_stl_path = f"{instance_name}/two_columns_close.stl"  # TODO: change this
+    visualize_config(config_path=config_path, obstacle_stl_path=obstacle_stl_path)
