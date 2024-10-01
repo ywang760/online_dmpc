@@ -77,7 +77,7 @@ pk = pk(:,1:20:end,:);
 %% Animation of transition
 if view_animation
     figure(3)
-    colors = distinguishable_colors(N);
+    colors = parula(N);
     set(gcf, 'Position', get(0, 'Screensize'));
     set(gcf,'currentchar',' ')
     while get(gcf,'currentchar')==' '

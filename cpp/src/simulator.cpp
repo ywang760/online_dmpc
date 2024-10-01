@@ -257,9 +257,9 @@ void Simulator::saveDataToFile(char const *pathAndName) {
         cout << "Writing solution to text file..." << endl;
 
         // write a few simulation parameters used in the reading end
-        file << _N << " " <<  _Ncmd << " " << _pmin.transpose() << " " << _pmax.transpose() << endl;
-        file << _po << endl;
-        file << _pf << endl;
+        // file << _N << " " <<  _Ncmd << " " << _pmin.transpose() << " " << _pmax.transpose() << endl;
+        // file << _po << endl;
+        // file << _pf << endl;
 
         for(int i=0; i < _Ncmd; ++i)
             file << _trajectories[i] << endl;

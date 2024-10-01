@@ -47,14 +47,14 @@
   "spd_f": 3,
   "spd_o": 1,
   "spd_r": 10,
-  "lin_coll": -100000,
+  "lin_coll": -100000, // paper also used -50000
   "quad_coll": 1,
   "acc_cost": 0.008,
 
 // Dimensions of the workspace in format [x, y, z]
   "pmin": [-1.5, -1.5, 0.2],
   "pmax": [1.5, 1.5, 2.2],
-  "amin": [-1.0, -1.0, -1.0],
+  "amin": [-1.0, -1.0, -1.0], // acceleration
   "amax": [1.0, 1.0, 1.0],
 
 // Collision boundary parameters for agents

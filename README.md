@@ -66,6 +66,10 @@ Writing solution to text file...
 ### Running your own scenarios
 The entry point of the code is `src/main.cpp`. If you want to run your own transition scenarios, or play around with the (many) hyperparameters of the algorithm, the main configuration file is in `cpp/config/config.json`. You can find an explanation of each hyperparameter in `cpp/config/help.txt`. 
 
+```bash
+./run ../config/config_Swap50.json 60 ../results/trajectories_Swap50.txt
+```
+
 ## MATLAB
 The code was written and executed with **MATLAB2018a**. There's no guarantees it will work in other versions.
 
