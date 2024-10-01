@@ -20,5 +20,6 @@ cpp/lib/
 matlab/data/
 
 *.avi
+*.mp4
 
 .vscode/

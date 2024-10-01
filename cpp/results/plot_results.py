@@ -5,6 +5,7 @@ import json
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 from stl import mesh
 from matplotlib import colormaps as mcm
+import argparse
 
 
 def plot_obstacle(obstacle_file_path, ax=None):
@@ -31,8 +32,30 @@ def plot_ellipsoid(ax, center, radii, color="k"):
 
 
 # TODO: modify this
-instance_name = "Swap48"
-
+parser = argparse.ArgumentParser(description="Visualize DMPC result")
+parser.add_argument(
+    "-i",
+    "--instance_name",
+    type=str,
+    required=True,
+    help="Name of the instance, i.e. SwapClose48",
+)
+parser.add_argument(
+    "--show",
+    action="store_true",
+    help="Show the animation instead of saving it",
+)
+parser.add_argument(
+    "--save_name",
+    type=str,
+    help="Name of the saved animation",
+)
+args = parser.parse_args()
+instance_name = args.instance_name
+show_animation = args.show
+save_name = args.save_name
+if not show_animation and save_name is None:
+    save_name = f"DMPC_{instance_name}.mp4"
 view_states = False
 view_animation = True
 
@@ -134,6 +157,8 @@ if view_animation:
             plot_ellipsoid(ax, po[0, :, i], obstacle_bbox_dis, "r")
 
     anim = FuncAnimation(fig, update, frames=range(pk.shape[1]), blit=True)
-    # plt.show()
-    # save animation
-    anim.save("DMPC_Swap48.mp4", writer="ffmpeg", fps=30)
+    if show_animation:
+        plt.show()
+    else:
+        # save animation
+        anim.save(save_name, writer="ffmpeg", fps=30)

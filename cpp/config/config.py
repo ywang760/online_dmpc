@@ -22,7 +22,9 @@ def process_obstacle(obstacle_file_path, r_obs=1.0, height_scaling_obs=1.0):
         xmin, xmax = np.min(cube_vertices[:, 0]), np.max(cube_vertices[:, 0])
         ymin, ymax = np.min(cube_vertices[:, 1]), np.max(cube_vertices[:, 1])
         zmin, zmax = np.min(cube_vertices[:, 2]), np.max(cube_vertices[:, 2])
-        print(f"Cube {i}: xmin={xmin}, xmax={xmax}, ymin={ymin}, ymax={ymax}, zmin={zmin}, zmax={zmax}")
+        print(
+            f"Cube {i}: xmin={xmin}, xmax={xmax}, ymin={ymin}, ymax={ymax}, zmin={zmin}, zmax={zmax}"
+        )
         length, width, height = xmax - xmin, ymax - ymin, zmax - zmin
         print(f"Cube {i}: dx={length}, dy={width}, dz={height}")
         count_x = int(np.ceil(length / d_obs))
@@ -30,7 +32,7 @@ def process_obstacle(obstacle_file_path, r_obs=1.0, height_scaling_obs=1.0):
         count_z = int(np.ceil(height / h_obs))
         print(f"Cube {i}: count_x={count_x}, count_y={count_y}, count_z={count_z}")
         count = count_x * count_y * count_z
-        
+
         # Calculate the centers of the smaller spheres
         x = np.linspace(xmin + r_obs, xmax - r_obs, count_x)
         y = np.linspace(ymin + r_obs, ymax - r_obs, count_y)
@@ -39,7 +41,7 @@ def process_obstacle(obstacle_file_path, r_obs=1.0, height_scaling_obs=1.0):
         centers = np.vstack([xx.ravel(), yy.ravel(), zz.ravel()]).T
         assert len(centers) == count, f"Count mismatch: {len(centers)} != {count}"
         cube_centers.extend(centers.tolist())
-        
+
     return cube_centers, r_obs, height_scaling_obs
 
 
@@ -106,8 +108,39 @@ def process_largescale_config(
 
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="Process large-scale simulation config"
+    )
+    parser.add_argument(
+        "-i",
+        "--instance_name",
+        type=str,
+        required=True,
+        help="Name of the instance, i.e. SwapClose48",
+    )
+    args = parser.parse_args()
+    instance_name = args.instance_name
+
+    # find the path of the large-scale simulation config file, which is in the folder "instance_name" and start with "simulation" and end with ".json"
+    largescale_simulation_config_path = os.path.join(
+        instance_name,
+        [
+            file
+            for file in os.listdir(instance_name)
+            if file.startswith("simulation") and file.endswith(".json")
+        ][0],
+    )
+    print(f"Large-scale simulation config path: {largescale_simulation_config_path}")
+    dmpc_original_config_path = "config.json"
+    output_file_path = f"config_{instance_name}.json"
+
+    # largescale_simulation_config_path="SwapClose48/simulation_config_swap.json"
+    # dmpc_original_config_path="config.json"
+    # output_file_path="config_SwapClose48.json"
     process_largescale_config(
-        largescale_simulation_config_path="SwapClose48/simulation_config_swap.json",
-        dmpc_original_config_path="config.json",
-        output_file_path="config_SwapClose48.json",
+        largescale_simulation_config_path,
+        dmpc_original_config_path,
+        output_file_path,
     )

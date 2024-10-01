@@ -2,8 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import json
-import os
-import sys
+
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 from stl import mesh
 
@@ -120,11 +119,33 @@ def visualize_config(config_path, obstacle_stl_path=None):
     ax.set_xlim(-6, 6)
     ax.set_ylim(-6, 6)
     ax.set_zlim(0, 12)
-    plt.show()
+    # plt.show()
 
 
 if __name__ == "__main__":
-    instance_name = "SwapClose48"  # TODO: change this
+    import argparse
+    import os
+
+    parser = argparse.ArgumentParser(description="Visualize DMPC config")
+    parser.add_argument(
+        "-i",
+        "--instance_name",
+        type=str,
+        required=True,
+        help="Name of the instance, i.e. SwapClose48",
+    )
+    args = parser.parse_args()
+    instance_name = args.instance_name
+
     config_path = f"config_{instance_name}.json"
-    obstacle_stl_path = f"{instance_name}/two_columns_close.stl"  # TODO: change this
+    # find the obstacle_stl_path by finding a *stl file in the instance_name folder
+    obstacle_stl_path = f"{instance_name}/{[file for file in os.listdir(instance_name) if file.endswith('.stl')][0]}"
+
+    # instance_name = "SwapClose48"  # TODO: change this
+    # config_path = f"config_{instance_name}.json"
+    # obstacle_stl_path = f"{instance_name}/two_columns_close.stl"  # TODO: change this
+
+    print(f"Visualizing config file: {config_path}, obstacle file: {obstacle_stl_path}")
     visualize_config(config_path=config_path, obstacle_stl_path=obstacle_stl_path)
+    plt.savefig(f"{instance_name}/config.png")
+    print(f"Visualization saved at {instance_name}/config.png")
