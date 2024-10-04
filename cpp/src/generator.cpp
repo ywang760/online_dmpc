@@ -226,24 +226,26 @@ void Generator::solveCluster(const std::vector<State3D> &current_states,
 
     VectorXd err_pos, cost, denominator;
     for (int i = agents.front(); i <= agents.back(); i++) {
+        high_resolution_clock::time_point t1 = high_resolution_clock::now();
+
         // Pick initial condition for the reference
         _x0_ref[i] = getInitialReference(current_states[i], _x0_ref[i]);
 
         // Build collision constraint
-//        high_resolution_clock::time_point t1 = high_resolution_clock::now();
+        // high_resolution_clock::time_point t1 = high_resolution_clock::now();
         Constraint collision = _avoider->getCollisionConstraint(current_states[i], i);
-//        high_resolution_clock::time_point t2 = high_resolution_clock::now();
-//        auto duration = duration_cast<microseconds>( t2 - t1 ).count();
-//        cout << "Time building constraint = "
-//             << duration/1000.0 << "ms" << endl << endl;
+        // high_resolution_clock::time_point t2 = high_resolution_clock::now();
+        // auto duration = duration_cast<microseconds>( t2 - t1 ).count();
+        // cout << "Time building constraint = "
+        //         << duration/1000.0 << "ms" << endl;
 
         // We need to increase the size of other matrices if collision constraints are included
-//        t1 = high_resolution_clock::now();
+        // t1 = high_resolution_clock::now();
         QuadraticProblem problem = buildQP(collision, current_states[i], i);
-//        t2 = high_resolution_clock::now();
-//        duration = duration_cast<microseconds>( t2 - t1 ).count();
-//        cout << "Time assembling QP = "
-//             << duration/1000.0 << "ms" << endl << endl;
+        // t2 = high_resolution_clock::now();
+        // duration = duration_cast<microseconds>( t2 - t1 ).count();
+        // cout << "Time assembling QP = "
+        //         << duration/1000.0 << "ms" << endl;
 
         // Create a new solver pointer of base class
         unique_ptr<BaseSolver> solver;
@@ -288,12 +290,17 @@ void Generator::solveCluster(const std::vector<State3D> &current_states,
 //            duration = duration_cast<microseconds>( t2 - t1 ).count();
 //            cout << "Time updating next input sequence = "
 //                 << duration/1000.0 << "ms" << endl << endl;
+            cout << "QP success for agent " << i << endl;
         }
         else {
             // QP failed - repeat previous solution
-            cout << "QP failed" << endl;
+            cout << "QP failed for agent " << i << endl;
         }
 
+        high_resolution_clock::time_point t2 = high_resolution_clock::now();
+        auto duration = duration_cast<microseconds>( t2 - t1 ).count();
+        cout << "QP time = "
+                << duration/1000.0 << "ms" << endl;
     }
 }
 

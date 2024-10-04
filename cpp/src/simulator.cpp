@@ -146,12 +146,13 @@ void Simulator::run(int duration) {
     // Loop through all the time steps for the duration specified
     for (int k = 0; k < K; k++) {
         if (count == max_count) {
+            cout << "Solving for time step " << k << endl;
             // Get next series of inputs
             t1 = high_resolution_clock::now();
             _inputs = _generator->getNextInputs(_current_states);
             t2 = high_resolution_clock::now();
             auto mpc_duration = duration_cast<microseconds>( t2 - t1 ).count();
-            cout << "Solving frequency = " << 1000000.0 / mpc_duration << " Hz" << endl;
+            cout << "MPC duration = " << mpc_duration/1000.0 << " ms" << endl << endl;
             count = 0;
         }
 
