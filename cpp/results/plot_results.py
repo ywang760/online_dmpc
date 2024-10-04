@@ -6,7 +6,7 @@ from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 from stl import mesh
 from matplotlib import colormaps as mcm
 import argparse
-
+import os
 
 def plot_obstacle(obstacle_file_path, ax=None):
     obstacle_mesh = mesh.Mesh.from_file(obstacle_file_path)
@@ -34,11 +34,11 @@ def plot_ellipsoid(ax, center, radii, color="k"):
 # TODO: modify this
 parser = argparse.ArgumentParser(description="Visualize DMPC result")
 parser.add_argument(
-    "-i",
-    "--instance_name",
+    "-p",
+    "--trajectories_path",
     type=str,
     required=True,
-    help="Name of the instance, i.e. SwapClose48",
+    help="Path to the trajectories.txt",
 )
 parser.add_argument(
     "--show",
@@ -51,15 +51,20 @@ parser.add_argument(
     help="Name of the saved animation",
 )
 args = parser.parse_args()
-instance_name = args.instance_name
+trajectory_path = args.trajectories_path
 show_animation = args.show
 save_name = args.save_name
+
+instance_name = trajectory_path.split("_")[-1].split(".")[0]
+
 if not show_animation and save_name is None:
     save_name = f"DMPC_{instance_name}.mp4"
+save_dir = os.path.dirname(trajectory_path)
+full_save_path = os.path.join(save_dir, save_name)
 view_states = False
 view_animation = True
 
-config_path = f"../config/config_{instance_name}.json"
+config_path = f"config/config_{instance_name}.json"
 
 with open(config_path, "r") as f:
     config = json.load(f)
@@ -73,7 +78,7 @@ pf = np.array(config["pf"]).T
 po = po.reshape(1, 3, N)
 pf = pf.reshape(1, 3, N_cmd)
 
-all_pos = np.loadtxt(f"trajectories_{instance_name}.txt")
+all_pos = np.loadtxt(trajectory_path)
 pk = []
 for i in range(N_cmd):
     pk.append(all_pos[3 * i : 3 * (i + 1), :])
@@ -161,4 +166,4 @@ if view_animation:
         plt.show()
     else:
         # save animation
-        anim.save(save_name, writer="ffmpeg", fps=30)
+        anim.save(full_save_path, writer="ffmpeg", fps=30)
