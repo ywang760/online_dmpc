@@ -23,3 +23,9 @@ matlab/data/
 *.mp4
 
 .vscode/
+
+**/results/**/*.log
+**/results/**/*.txt
+**/config/**/*.png
+**/config/**/*.stl
+**/config/**/*.json
