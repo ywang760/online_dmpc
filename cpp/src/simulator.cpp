@@ -9,7 +9,8 @@ using namespace std;
 using namespace std::chrono;
 using json = nlohmann::json;
 
-Simulator::Simulator(std::ifstream& config_file) {
+Simulator::Simulator(std::ifstream& config_file, std::ofstream& stats_file)
+    : _stats_file(stats_file) {
     Generator::Params p = parseJSON(config_file);
     _generator = std::make_unique<Generator>(p);
     _sim_model = std::make_unique<DoubleIntegrator3D>(p.mpc_params.Ts, p.model_params);
@@ -79,6 +80,7 @@ Generator::Params Simulator::parseJSON(std::ifstream& config_file) {
     EllipseParams ellipse_params;
     ellipse_params.order = j["order"];
     ellipse_params.rmin = j["rmin"];
+    _rmin = j["rmin"];
     ellipse_params.c = (Eigen::Vector3d() << 1.0, 1.0, j["height_scaling"]).finished();
     std::vector<EllipseParams> ellipse_vec(_Ncmd, ellipse_params);
 
@@ -143,17 +145,29 @@ void Simulator::run(int duration) {
     int count = max_count;
     high_resolution_clock::time_point t1, t2;
 
+    std::vector<double> mpc_durations;
+
+    json output_json = json::array();
+
     // Loop through all the time steps for the duration specified
     for (int k = 0; k < K; k++) {
         if (count == max_count) {
+            json timestep_data;
+            json stats_json;
+
             cout << "Solving for time step " << k << endl;
             // Get next series of inputs
             t1 = high_resolution_clock::now();
-            _inputs = _generator->getNextInputs(_current_states);
+            _inputs = _generator->getNextInputs(_current_states, stats_json);
             t2 = high_resolution_clock::now();
             auto mpc_duration = duration_cast<microseconds>( t2 - t1 ).count();
             cout << "MPC duration = " << mpc_duration/1000.0 << " ms" << endl << endl;
             count = 0;
+
+            timestep_data["timestamp"] = k;
+            timestep_data["mpc_duration"] = mpc_duration/1000.0;
+            timestep_data["robot_data"] = stats_json;
+            output_json.push_back(timestep_data);
         }
 
         // Apply inputs to all agents to get the next states
@@ -166,13 +180,20 @@ void Simulator::run(int duration) {
     }
 
     // After simulation finished, run a check on the solution
-    collisionCheck(_trajectories);
-    goalCheck(_current_states);
+    int collision_count = 0;
+    int goal_reach_count = 0;
+    collisionCheck(_trajectories, collision_count);
+    goalCheck(_current_states, goal_reach_count);
+
+    json master_output;
+    master_output["collision_count"] = collision_count;
+    master_output["goal_reach_count"] = goal_reach_count;
+    master_output["simulation_data"] = output_json;
+    _stats_file << master_output.dump(4) << endl;
 }
 
 
-bool Simulator::collisionCheck(const std::vector<Eigen::MatrixXd> &trajectories) {
-    float rmin_check = 0.15;
+bool Simulator::collisionCheck(const std::vector<Eigen::MatrixXd> &trajectories, int& collision_count) {
     int order = 2;
     VectorXd c_check = (Eigen::Vector3d() << 1.0, 1.0, 3.0).finished();
     MatrixXd E_check = c_check.asDiagonal();
@@ -191,8 +212,9 @@ bool Simulator::collisionCheck(const std::vector<Eigen::MatrixXd> &trajectories)
                 dist = pow(((differ.array().pow(order)).colwise().sum()),1.0 / order);
                 min_dist = dist.minCoeff(&pos);
 
-                if (min_dist < rmin_check) {
+                if (min_dist < 2 * _rmin) {
                     violation = true;
+                    collision_count++;
                     cout << "Collision constraint violation: ";
                     cout << "Vehicles " << i << " and " << j;
                     cout << " will be " << min_dist << "m";
@@ -204,10 +226,11 @@ bool Simulator::collisionCheck(const std::vector<Eigen::MatrixXd> &trajectories)
 
     if (!violation)
         cout << "No collisions found!" << endl;
+    
     return violation;
 }
 
-bool Simulator::goalCheck(const std::vector<State3D> &states) {
+bool Simulator::goalCheck(const std::vector<State3D> &states, int& goal_reach_count) {
     Vector3d diff;
     double dist;
     bool reached_goal = true;
@@ -219,6 +242,8 @@ bool Simulator::goalCheck(const std::vector<State3D> &states) {
         if (dist > goal_tolerance){
             cout << "Vehicle " << i << " did not reached its goal by " << dist << " m" << endl;
             reached_goal = false;
+        } else {
+            goal_reach_count++;
         }
     }
 

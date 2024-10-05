@@ -41,9 +41,8 @@ then
     SIMULATION_DURATION=60
 fi
 echo "Start running the planner, simulation duration: $SIMULATION_DURATION"
-./run "../config/config_${INSTANCE_NAME}.json" $SIMULATION_DURATION ../${output_dir}/trajectories_${INSTANCE_NAME}.txt > ../${output_dir}/${INSTANCE_NAME}.log
-echo "Planner finished, results are saved in ${output_dir}/trajectories_${INSTANCE_NAME}.txt"
-echo "Log is saved in ${output_dir}/${INSTANCE_NAME}.log"
+./run "../config/config_${INSTANCE_NAME}.json" $SIMULATION_DURATION ../${output_dir}/trajectories_${INSTANCE_NAME}.txt ../${output_dir}/stats_${INSTANCE_NAME}.json > ../${output_dir}/${INSTANCE_NAME}.log
+echo "Output saved in folder ${output_dir}"
 
 cd $base_dir
 

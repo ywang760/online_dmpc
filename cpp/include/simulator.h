@@ -19,7 +19,7 @@ public:
     };
 
 //    explicit Simulator(const Simulator::Params& p);
-    explicit Simulator(std::ifstream& config_file);
+    explicit Simulator(std::ifstream& config_file, std::ofstream& stats_file);
     ~Simulator(){};
 
 
@@ -48,12 +48,14 @@ private:
     int _N;
     float _h;
     float _Ts;
+    double _rmin;
+    std::ofstream& _stats_file;
 
     // Methods
     Generator::Params parseJSON(std::ifstream& config_file);
     State3D addRandomNoise(const State3D& states);
-    bool collisionCheck(const std::vector<Eigen::MatrixXd>& trajectories);
-    bool goalCheck(const std::vector<State3D>& states);
+    bool collisionCheck(const std::vector<Eigen::MatrixXd>& trajectories, int& collision_count);
+    bool goalCheck(const std::vector<State3D>& states, int& goal_reach_count);
     Eigen::MatrixXd generateRandomPoints(int N, const Eigen::Vector3d &pmin,
                                          const Eigen::Vector3d &pmax, float rmin);
 };

@@ -9,8 +9,11 @@
 #include "model.h"
 #include "avoidance.h"
 #include "solver.h"
+#include "json.hpp"
 #include <thread>
+#include <mutex>
 
+using json = nlohmann::json;
 typedef enum {
     kQpoases
 } Solver;
@@ -49,7 +52,7 @@ public:
 
     // Public methods
     std::vector<Ellipse> getEllipses(){return _avoider->getEllipses();};
-    std::vector<Eigen::MatrixXd> getNextInputs(const std::vector<State3D>& current_states);
+    std::vector<Eigen::MatrixXd> getNextInputs(const std::vector<State3D>& current_states, json& stats_json);
 
 private:
     float _h;
@@ -85,6 +88,7 @@ private:
     const int _max_clusters;
     std::vector<std::thread> _t;
     std::vector<std::vector<int>> _cluster;
+    std::mutex _json_mutex;
 
     // Matrix that samples the input for t in [t0, t0 + h], with sampling time ts
     Eigen::MatrixXd _Rho_pos_ts;
@@ -128,7 +132,7 @@ private:
     Eigen::MatrixXd getInitialReference(const State3D& state, const Eigen::MatrixXd& ref);
 
     void solveCluster(const std::vector<State3D>& curr_states,
-                       const std::vector<int>& agents);
+                       const std::vector<int>& agents, json& stats_json, std::mutex& json_mutex);
 
     QuadraticProblem buildQP(const Constraint& collision, const State3D& state,
                               int agent_id);

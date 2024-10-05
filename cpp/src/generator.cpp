@@ -7,6 +7,7 @@
 using namespace std;
 using namespace Eigen;
 using namespace std::chrono;
+using json = nlohmann::json;
 
 Generator::Generator(const Generator::Params& p) :
     _bezier(p.bezier_params),
@@ -205,26 +206,27 @@ void Generator::initGenerator() {
     _newhorizon = _oldhorizon;
 }
 
-std::vector<MatrixXd> Generator::getNextInputs(const vector<State3D>& current_states) {
-
+std::vector<MatrixXd> Generator::getNextInputs(const std::vector<State3D>& current_states, json& stats_json) {
     // Launch all the threads to get the next set of inputs
     for (int i = 0; i < _cluster.size(); i++)
-        _t[i] = std::thread(&Generator::solveCluster, this, ref(current_states), _cluster[i]);
+        _t[i] = std::thread(&Generator::solveCluster, this, std::ref(current_states), std::ref(_cluster[i]), std::ref(stats_json), std::ref(_json_mutex));
 
     // Wait for all agents to solve the optimization
     for (int i = 0; i < _cluster.size(); ++i)
         _t[i].join();
 
-    // Update the old horizon with the newhorizon for the next optimization
+    // Update the old horizon with the new horizon for the next optimization
     _oldhorizon = _newhorizon;
 
     return _next_inputs;
 }
 
-void Generator::solveCluster(const std::vector<State3D> &current_states,
-                              const std::vector<int> &agents) {
 
+void Generator::solveCluster(const std::vector<State3D>& current_states, const std::vector<int>& agents, json& stats_json, std::mutex& json_mutex) {
     VectorXd err_pos, cost, denominator;
+    double success_count = 0;
+    std::vector<double> solve_times;
+
     for (int i = agents.front(); i <= agents.back(); i++) {
         high_resolution_clock::time_point t1 = high_resolution_clock::now();
 
@@ -291,6 +293,7 @@ void Generator::solveCluster(const std::vector<State3D> &current_states,
 //            cout << "Time updating next input sequence = "
 //                 << duration/1000.0 << "ms" << endl << endl;
             cout << "QP success for agent " << i << endl;
+            success_count++;
         }
         else {
             // QP failed - repeat previous solution
@@ -301,6 +304,14 @@ void Generator::solveCluster(const std::vector<State3D> &current_states,
         auto duration = duration_cast<microseconds>( t2 - t1 ).count();
         cout << "QP time = "
                 << duration/1000.0 << "ms" << endl;
+
+        solve_times.push_back(duration/1000.0);
+    }
+
+    {
+        // std::lock_guard<std::mutex> lock(json_mutex);
+        stats_json["success_rate"] = success_count / agents.size();
+        stats_json["solve_times"] = solve_times;
     }
 }
 
