@@ -1,0 +1,1922 @@
+[
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -14.4,
+            1.7634913907721887e-15,
+            1.0
+        ],
+        "id": 0,
+        "start_position": [
+            14.4,
+            0.0,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -14.355609605757042,
+            -1.1298109784809653,
+            1.0
+        ],
+        "id": 1,
+        "start_position": [
+            14.355609605757042,
+            1.1298109784809671,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -14.222712104569984,
+            -2.2526562965793224,
+            1.0
+        ],
+        "id": 2,
+        "start_position": [
+            14.222712104569984,
+            2.2526562965793246,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -14.002126853726544,
+            -3.361613239525036,
+            1.0
+        ],
+        "id": 3,
+        "start_position": [
+            14.002126853726542,
+            3.3616132395250378,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -13.695213834650213,
+            -4.449844718999241,
+            1.0
+        ],
+        "id": 4,
+        "start_position": [
+            13.695213834650211,
+            4.449844718999243,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -13.30386526816253,
+            -5.510641426057291,
+            1.0
+        ],
+        "id": 5,
+        "start_position": [
+            13.303865268162529,
+            5.510641426057293,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -12.830493948312498,
+            -6.5374631962494725,
+            1.0
+        ],
+        "id": 6,
+        "start_position": [
+            12.830493948312498,
+            6.537463196249473,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -12.278018366698928,
+            -7.523979331909661,
+            1.0
+        ],
+        "id": 7,
+        "start_position": [
+            12.278018366698928,
+            7.523979331909663,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -11.649844718999246,
+            -8.464107633011611,
+            1.0
+        ],
+        "id": 8,
+        "start_position": [
+            11.649844718999244,
+            8.464107633011613,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -10.949845904640448,
+            -9.352051895954643,
+            1.0
+        ],
+        "id": 9,
+        "start_position": [
+            10.949845904640446,
+            9.352051895954645,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -10.182337649086287,
+            -10.182337649086284,
+            1.0
+        ],
+        "id": 10,
+        "start_position": [
+            10.182337649086286,
+            10.182337649086284,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -9.352051895954652,
+            -10.94984590464044,
+            1.0
+        ],
+        "id": 11,
+        "start_position": [
+            9.352051895954645,
+            10.949845904640446,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -8.464107633011615,
+            -11.649844718999242,
+            1.0
+        ],
+        "id": 12,
+        "start_position": [
+            8.464107633011613,
+            11.649844718999244,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -7.5239793319096595,
+            -12.27801836669893,
+            1.0
+        ],
+        "id": 13,
+        "start_position": [
+            7.523979331909665,
+            12.278018366698928,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -6.537463196249476,
+            -12.830493948312496,
+            1.0
+        ],
+        "id": 14,
+        "start_position": [
+            6.537463196249474,
+            12.830493948312496,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -5.510641426057301,
+            -13.303865268162527,
+            1.0
+        ],
+        "id": 15,
+        "start_position": [
+            5.510641426057294,
+            13.303865268162529,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -4.449844718999245,
+            -13.695213834650211,
+            1.0
+        ],
+        "id": 16,
+        "start_position": [
+            4.449844718999244,
+            13.695213834650211,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -3.361613239525034,
+            -14.002126853726544,
+            1.0
+        ],
+        "id": 17,
+        "start_position": [
+            3.361613239525039,
+            14.002126853726542,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -2.252656296579327,
+            -14.222712104569982,
+            1.0
+        ],
+        "id": 18,
+        "start_position": [
+            2.2526562965793255,
+            14.222712104569984,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -1.1298109784809762,
+            -14.355609605757042,
+            1.0
+        ],
+        "id": 19,
+        "start_position": [
+            1.129810978480968,
+            14.355609605757042,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -2.645237086158283e-15,
+            -14.4,
+            1.0
+        ],
+        "id": 20,
+        "start_position": [
+            8.817456953860943e-16,
+            14.4,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            1.1298109784809711,
+            -14.355609605757042,
+            1.0
+        ],
+        "id": 21,
+        "start_position": [
+            -1.1298109784809662,
+            14.355609605757042,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            2.252656296579322,
+            -14.222712104569984,
+            1.0
+        ],
+        "id": 22,
+        "start_position": [
+            -2.2526562965793238,
+            14.222712104569984,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            3.361613239525029,
+            -14.002126853726546,
+            1.0
+        ],
+        "id": 23,
+        "start_position": [
+            -3.361613239525037,
+            14.002126853726544,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            4.44984471899924,
+            -13.695213834650213,
+            1.0
+        ],
+        "id": 24,
+        "start_position": [
+            -4.449844718999242,
+            13.695213834650213,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            5.510641426057296,
+            -13.303865268162527,
+            1.0
+        ],
+        "id": 25,
+        "start_position": [
+            -5.510641426057292,
+            13.303865268162529,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            6.537463196249472,
+            -12.8304939483125,
+            1.0
+        ],
+        "id": 26,
+        "start_position": [
+            -6.5374631962494725,
+            12.830493948312498,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            7.523979331909657,
+            -12.278018366698932,
+            1.0
+        ],
+        "id": 27,
+        "start_position": [
+            -7.523979331909663,
+            12.278018366698928,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            8.46410763301161,
+            -11.649844718999246,
+            1.0
+        ],
+        "id": 28,
+        "start_position": [
+            -8.464107633011611,
+            11.649844718999244,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            9.352051895954649,
+            -10.949845904640444,
+            1.0
+        ],
+        "id": 29,
+        "start_position": [
+            -9.352051895954643,
+            10.949845904640448,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            10.182337649086282,
+            -10.182337649086287,
+            1.0
+        ],
+        "id": 30,
+        "start_position": [
+            -10.182337649086284,
+            10.182337649086286,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            10.949845904640439,
+            -9.352051895954652,
+            1.0
+        ],
+        "id": 31,
+        "start_position": [
+            -10.949845904640446,
+            9.352051895954647,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            11.649844718999242,
+            -8.464107633011617,
+            1.0
+        ],
+        "id": 32,
+        "start_position": [
+            -11.649844718999242,
+            8.464107633011615,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            12.278018366698928,
+            -7.523979331909661,
+            1.0
+        ],
+        "id": 33,
+        "start_position": [
+            -12.278018366698928,
+            7.523979331909665,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            12.830493948312496,
+            -6.537463196249477,
+            1.0
+        ],
+        "id": 34,
+        "start_position": [
+            -12.830493948312496,
+            6.537463196249475,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            13.303865268162527,
+            -5.510641426057302,
+            1.0
+        ],
+        "id": 35,
+        "start_position": [
+            -13.303865268162529,
+            5.510641426057295,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            13.695213834650211,
+            -4.449844718999246,
+            1.0
+        ],
+        "id": 36,
+        "start_position": [
+            -13.695213834650211,
+            4.449844718999244,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            14.002126853726544,
+            -3.361613239525035,
+            1.0
+        ],
+        "id": 37,
+        "start_position": [
+            -14.002126853726542,
+            3.3616132395250395,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            14.222712104569982,
+            -2.252656296579328,
+            1.0
+        ],
+        "id": 38,
+        "start_position": [
+            -14.222712104569982,
+            2.252656296579326,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            14.355609605757042,
+            -1.1298109784809771,
+            1.0
+        ],
+        "id": 39,
+        "start_position": [
+            -14.355609605757042,
+            1.1298109784809691,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            14.4,
+            -3.5269827815443773e-15,
+            1.0
+        ],
+        "id": 40,
+        "start_position": [
+            -14.4,
+            1.7634913907721887e-15,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            14.355609605757042,
+            1.12981097848097,
+            1.0
+        ],
+        "id": 41,
+        "start_position": [
+            -14.355609605757042,
+            -1.1298109784809653,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            14.222712104569984,
+            2.252656296579321,
+            1.0
+        ],
+        "id": 42,
+        "start_position": [
+            -14.222712104569984,
+            -2.2526562965793224,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            14.002126853726546,
+            3.361613239525028,
+            1.0
+        ],
+        "id": 43,
+        "start_position": [
+            -14.002126853726544,
+            -3.361613239525036,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            13.695213834650213,
+            4.449844718999239,
+            1.0
+        ],
+        "id": 44,
+        "start_position": [
+            -13.695213834650213,
+            -4.449844718999241,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            13.303865268162529,
+            5.510641426057296,
+            1.0
+        ],
+        "id": 45,
+        "start_position": [
+            -13.30386526816253,
+            -5.510641426057291,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            12.8304939483125,
+            6.537463196249471,
+            1.0
+        ],
+        "id": 46,
+        "start_position": [
+            -12.830493948312498,
+            -6.5374631962494725,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            12.278018366698934,
+            7.523979331909655,
+            1.0
+        ],
+        "id": 47,
+        "start_position": [
+            -12.278018366698928,
+            -7.523979331909661,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            11.649844718999246,
+            8.46410763301161,
+            1.0
+        ],
+        "id": 48,
+        "start_position": [
+            -11.649844718999246,
+            -8.464107633011611,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            10.949845904640444,
+            9.352051895954647,
+            1.0
+        ],
+        "id": 49,
+        "start_position": [
+            -10.949845904640448,
+            -9.352051895954643,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            10.182337649086287,
+            10.182337649086282,
+            1.0
+        ],
+        "id": 50,
+        "start_position": [
+            -10.182337649086287,
+            -10.182337649086284,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            9.352051895954652,
+            10.949845904640439,
+            1.0
+        ],
+        "id": 51,
+        "start_position": [
+            -9.352051895954652,
+            -10.94984590464044,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            8.464107633011617,
+            11.64984471899924,
+            1.0
+        ],
+        "id": 52,
+        "start_position": [
+            -8.464107633011615,
+            -11.649844718999242,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            7.523979331909661,
+            12.278018366698928,
+            1.0
+        ],
+        "id": 53,
+        "start_position": [
+            -7.5239793319096595,
+            -12.27801836669893,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            6.537463196249477,
+            12.830493948312494,
+            1.0
+        ],
+        "id": 54,
+        "start_position": [
+            -6.537463196249476,
+            -12.830493948312496,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            5.510641426057303,
+            13.303865268162527,
+            1.0
+        ],
+        "id": 55,
+        "start_position": [
+            -5.510641426057301,
+            -13.303865268162527,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            4.449844718999247,
+            13.695213834650211,
+            1.0
+        ],
+        "id": 56,
+        "start_position": [
+            -4.449844718999245,
+            -13.695213834650211,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            3.361613239525036,
+            14.002126853726544,
+            1.0
+        ],
+        "id": 57,
+        "start_position": [
+            -3.361613239525034,
+            -14.002126853726544,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            2.252656296579329,
+            14.222712104569982,
+            1.0
+        ],
+        "id": 58,
+        "start_position": [
+            -2.252656296579327,
+            -14.222712104569982,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            1.129810978480978,
+            14.355609605757042,
+            1.0
+        ],
+        "id": 59,
+        "start_position": [
+            -1.1298109784809762,
+            -14.355609605757042,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            4.408728476930472e-15,
+            14.4,
+            1.0
+        ],
+        "id": 60,
+        "start_position": [
+            -2.645237086158283e-15,
+            -14.4,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -1.1298109784809691,
+            14.355609605757042,
+            1.0
+        ],
+        "id": 61,
+        "start_position": [
+            1.1298109784809711,
+            -14.355609605757042,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -2.2526562965793073,
+            14.222712104569986,
+            1.0
+        ],
+        "id": 62,
+        "start_position": [
+            2.252656296579322,
+            -14.222712104569984,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -3.361613239525027,
+            14.002126853726546,
+            1.0
+        ],
+        "id": 63,
+        "start_position": [
+            3.361613239525029,
+            -14.002126853726546,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -4.4498447189992385,
+            13.695213834650213,
+            1.0
+        ],
+        "id": 64,
+        "start_position": [
+            4.44984471899924,
+            -13.695213834650213,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -5.510641426057295,
+            13.303865268162529,
+            1.0
+        ],
+        "id": 65,
+        "start_position": [
+            5.510641426057296,
+            -13.303865268162527,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -6.537463196249481,
+            12.830493948312494,
+            1.0
+        ],
+        "id": 66,
+        "start_position": [
+            6.537463196249472,
+            -12.8304939483125,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -7.523979331909655,
+            12.278018366698934,
+            1.0
+        ],
+        "id": 67,
+        "start_position": [
+            7.523979331909657,
+            -12.278018366698932,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -8.46410763301161,
+            11.649844718999248,
+            1.0
+        ],
+        "id": 68,
+        "start_position": [
+            8.46410763301161,
+            -11.649844718999246,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -9.352051895954647,
+            10.949845904640444,
+            1.0
+        ],
+        "id": 69,
+        "start_position": [
+            9.352051895954649,
+            -10.949845904640444,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -10.182337649086273,
+            10.182337649086296,
+            1.0
+        ],
+        "id": 70,
+        "start_position": [
+            10.182337649086282,
+            -10.182337649086287,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -10.949845904640437,
+            9.352051895954652,
+            1.0
+        ],
+        "id": 71,
+        "start_position": [
+            10.949845904640439,
+            -9.352051895954652,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -11.64984471899924,
+            8.464107633011617,
+            1.0
+        ],
+        "id": 72,
+        "start_position": [
+            11.649844718999242,
+            -8.464107633011617,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -12.278018366698928,
+            7.523979331909663,
+            1.0
+        ],
+        "id": 73,
+        "start_position": [
+            12.278018366698928,
+            -7.523979331909661,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -12.830493948312501,
+            6.537463196249467,
+            1.0
+        ],
+        "id": 74,
+        "start_position": [
+            12.830493948312496,
+            -6.537463196249477,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -13.303865268162525,
+            5.510641426057304,
+            1.0
+        ],
+        "id": 75,
+        "start_position": [
+            13.303865268162527,
+            -5.510641426057302,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -13.69521383465021,
+            4.449844718999248,
+            1.0
+        ],
+        "id": 76,
+        "start_position": [
+            13.695213834650211,
+            -4.449844718999246,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -14.002126853726544,
+            3.361613239525037,
+            1.0
+        ],
+        "id": 77,
+        "start_position": [
+            14.002126853726544,
+            -3.361613239525035,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -14.22271210456998,
+            2.252656296579342,
+            1.0
+        ],
+        "id": 78,
+        "start_position": [
+            14.222712104569982,
+            -2.252656296579328,
+            1.0
+        ]
+    },
+    {
+        "collision_shape_at_zero_max": [
+            0.1,
+            0.1,
+            0.2
+        ],
+        "collision_shape_at_zero_min": [
+            -0.1,
+            -0.1,
+            -0.2
+        ],
+        "continuity_upto_degree": 1,
+        "goal_position": [
+            -14.355609605757042,
+            1.1298109784809789,
+            1.0
+        ],
+        "id": 79,
+        "start_position": [
+            14.355609605757042,
+            -1.1298109784809771,
+            1.0
+        ]
+    }
+]

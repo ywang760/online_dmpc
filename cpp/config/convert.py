@@ -36,19 +36,13 @@ def process_obstacle(obstacle_file_path, r_obs=1.0, height_scaling_obs=1.0):
         # )
         length, width, height = xmax - xmin, ymax - ymin, zmax - zmin
         print(f"Cube {i}: dx={length}, dy={width}, dz={height}")
-        count_x = int(np.ceil(length / d_obs))
-        count_y = int(np.ceil(width / d_obs))
-        count_z = int(np.ceil(height / h_obs))
-        print(f"Cube {i}: count_x={count_x}, count_y={count_y}, count_z={count_z}")
-        count = count_x * count_y * count_z
 
         # Calculate the centers of the smaller spheres
-        x = np.linspace(xmin + r_obs, xmax - r_obs, count_x)
-        y = np.linspace(ymin + r_obs, ymax - r_obs, count_y)
-        z = np.linspace(zmin + r_obs, zmax - r_obs, count_z)
+        x = np.arange(xmin + r_obs, xmax, r_obs)
+        y = np.arange(ymin + r_obs, ymax, r_obs)
+        z = np.arange(zmin + r_obs, zmax, r_obs)
         xx, yy, zz = np.meshgrid(x, y, z)
         centers = np.vstack([xx.ravel(), yy.ravel(), zz.ravel()]).T
-        assert len(centers) == count, f"Count mismatch: {len(centers)} != {count}"
         cube_centers.extend(centers.tolist())
 
     return cube_centers, r_obs, height_scaling_obs
@@ -88,21 +82,17 @@ def process_largescale_config(
         print(f"Octomap is forest_small_5, using predefined cube centers")
     else:
         obstacle_centers, rmin_obs, height_scaling_obs = process_obstacle(
-            largescale_obstacle_file_path, r_obs=1.0, height_scaling_obs=1.0
+            largescale_obstacle_file_path, r_obs=0.8, height_scaling_obs=1.0
         )
         print("\033[91mConstructing obstacle centers from the octomap file, may not be accurate\033[0m")
     obstacle_count = len(obstacle_centers)
     for i in range(obstacle_count):
         po.append(obstacle_centers[i])
-
-    bbox_max = np.array(robot_config[0]["collision_shape_at_zero_max"])
-    bbox_min = np.array(robot_config[0]["collision_shape_at_zero_min"])
-    assert (
-        np.all(bbox_max + bbox_min) == 0
-    ), "The bounding box must be centered at the origin"
-    assert bbox_max[0] == bbox_max[1], "The bounding box must be a cube"
-    rmin = bbox_max[0]
-    height_scaling = bbox_max[2] / rmin
+        
+    bbox = np.array(simulation_config["collision_shape"])
+    assert bbox[0] == bbox[1], "The bounding box must be a cube"
+    rmin = bbox[0] * 2
+    height_scaling = bbox[2] / bbox[0]
 
     dmpc_original_config["po"] = po
     dmpc_original_config["pf"] = pf
@@ -115,12 +105,13 @@ def process_largescale_config(
     dmpc_original_config["pmin"] = simulation_config["workspace_min"]
     dmpc_original_config["pmax"] = simulation_config["workspace_max"]
     
-    # TODO: check the following parameters with Lishuo
+    # maybe also change khor
+    
     acc = simulation_config["max_derivatives"][1][1]
     dmpc_original_config["amin"] = [-acc] * 3
     dmpc_original_config["amax"] = [acc] * 3
-    dmpc_original_config["std_position"] = 0
-    dmpc_original_config["std_velocity"] = 0
+    # dmpc_original_config["std_position"] = 0
+    # dmpc_original_config["std_velocity"] = 0
 
     output_file_path = output_file_path or "config_updated.json"
     with open(output_file_path, "w") as f:

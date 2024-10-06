@@ -1,0 +1,92 @@
+{
+    "board_buffer": 3.0,
+    "collision_shape": [
+        0.12,
+        0.12,
+        0.3
+    ],
+    "discrete_time_duration": 0.5,
+    "goal_arrive_distance": 0.1,
+    "highlevel_plan_crowd_threshold": 20,
+    "highlevel_plan_max_iterations": 1000,
+    "highlevel_plan_rate": 0.05,
+    "highlevel_plan_suboptimal_bound": 2.0,
+    "highlevel_plan_time_limit": 5.0,
+    "highlevel_plan_type": 0,
+    "imbalance": 0.03,
+    "kahypar_config_filename": "../../../data/km1_kKaHyPar_sea20.ini",
+    "local_goal_buffer": 0.6,
+    "local_goal_disperse_tolerance": 0.12,
+    "local_goal_edge_radius": 1.8,
+    "local_goal_sampling_max_attempt": 200,
+    "local_goal_threshold": 10,
+    "lowlevel_plan_rate": 1.0,
+    "lowlevel_plan_suboptimal_bound": 2.0,
+    "lowlevel_plan_time_limit": 1,
+    "local_goal_ta_multi_exit": true,
+    "local_goal_ta_wait_cost": 40,
+    "parallel_num_threads": 30,
+    "mapf_c_enable": true,
+    "mapf_c_epsilon": 1e-05,
+    "mapf_exit_block_steps": 4,
+    "final_goal_neighborhood_radius": 1.6,
+    "num_partitions": 25,
+    "num_robot": 80,
+    "num_sampling_on_hyperplane": 300,
+    "octomap_filename": "../../map/examples/forest_small_5.bt",
+    "pre_compute_heuristic": true,
+    "roadmap_resolution": 1.6,
+    "robot_config_filename": "../../spawner/config_json/Circle80/robot_config_circle.json",
+    "robot_max_speed": 3.0,
+    "seed": 0,
+    "self_edge": true,
+    "simulation_time_step": 0.3333333333333333,
+    "workspace_max": [
+        15.0,
+        15.0,
+        8.0
+    ],
+    "workspace_min": [
+        -15.0,
+        -15.0,
+        0.0
+    ],
+    "continuity_upto_degree": 1,
+    "trajectory_optimization_step_duration": 0.5,
+    "integrated_squared_derivative": [
+        [
+            1,
+            1
+        ],
+        [
+            2,
+            1
+        ],
+        [
+            4,
+            1
+        ]
+    ],
+    "max_derivatives": [
+        [
+            1,
+            5
+        ],
+        [
+            2,
+            5
+        ],
+        [
+            3,
+            20
+        ]
+    ],
+    "endpoint_cost_thetas": 10,
+    "num_bezier_control_points": 8,
+    "robot_check_distance": 6.4,
+    "obstacle_check_distance": 3.2,
+    "maximum_number_of_duration_scalings": 8,
+    "duration_rescaling_factor": 1.2,
+    "spars_generate_duration": 15,
+    "roadmap_type": "Cubic"
+}

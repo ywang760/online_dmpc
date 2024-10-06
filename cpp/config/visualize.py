@@ -97,8 +97,8 @@ def visualize_config(config_path, obstacle_stl_path=None):
 
     agent_bbox_dis = [agent_lw, agent_lw, agent_h]
     for i in range(agent_count):
-        plot_cube(ax, agent_pos[i] - agent_bbox_dis, agent_pos[i] + agent_bbox_dis, "b")
-        # plot_ellipsoid(ax, pf[i], agent_bbox_dis, "b")
+        # plot_cube(ax, agent_pos[i] - agent_bbox_dis, agent_pos[i] + agent_bbox_dis, "b")
+        plot_ellipsoid(ax, pf[i], agent_bbox_dis, "b")
 
     obstacle_bbox_dis = [obstacle_lw, obstacle_lw, obstacle_h]
     for i in range(obstacle_count):
@@ -119,6 +119,7 @@ def visualize_config(config_path, obstacle_stl_path=None):
     ax.set_xlim(-6, 6)
     ax.set_ylim(-6, 6)
     ax.set_zlim(0, 12)
+    ax.set_aspect("equal")
     # plt.show()
 
 
@@ -141,11 +142,12 @@ if __name__ == "__main__":
     # find the obstacle_stl_path by finding a *stl file in the instance_name folder
     obstacle_stl_path = f"{instance_name}/{[file for file in os.listdir(instance_name) if file.endswith('.stl')][0]}"
 
-    # instance_name = "SwapClose48"  # TODO: change this
-    # config_path = f"config_{instance_name}.json"
-    # obstacle_stl_path = f"{instance_name}/two_columns_close.stl"  # TODO: change this
+    instance_name = "SwapClose48"  # TODO: change this
+    config_path = f"config_{instance_name}.json"
+    obstacle_stl_path = f"{instance_name}/two_columns_close.stl"  # TODO: change this
 
     print(f"Visualizing config file: {config_path}, obstacle file: {obstacle_stl_path}")
     visualize_config(config_path=config_path, obstacle_stl_path=obstacle_stl_path)
+    plt.show()
     plt.savefig(f"{instance_name}/config.png")
     print(f"Visualization saved at {instance_name}/config.png")
