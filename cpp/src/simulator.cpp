@@ -212,7 +212,7 @@ bool Simulator::collisionCheck(const std::vector<Eigen::MatrixXd> &trajectories,
                 dist = pow(((differ.array().pow(order)).colwise().sum()),1.0 / order);
                 min_dist = dist.minCoeff(&pos);
 
-                if (min_dist < 2 * _rmin) {
+                if (min_dist < _rmin) {
                     violation = true;
                     collision_count++;
                     cout << "Collision constraint violation: ";
