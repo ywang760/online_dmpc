@@ -3,13 +3,14 @@
 INSTANCE_NAME=$1
 SIMULATION_DURATION=$2
 VIZ=false
+RUN=false
 
 # Parse arguments
 shift 2
 while [[ "$#" -gt 0 ]]; do
     case $1 in
         --viz) VIZ=true ;;
-        *) echo "Unknown option: $1" ;;
+        --r) RUN=true ;;
     esac
     shift
 done
@@ -50,10 +51,18 @@ echo "-------Step 2: Converting configs to DMPC format"
 cd $config_dir
 python convert.py --instance_name "$INSTANCE_NAME"
 
+# rm -r "${config_dir}/${INSTANCE_NAME}"
+
 if [ "$VIZ" = true ]; then
     python visualize.py --instance_name "$INSTANCE_NAME"
 fi
 
-echo "-------Step 3: Running the planner"
-cd $base_dir/scripts
-bash run_single_exp.sh $INSTANCE_NAME $SIMULATION_DURATION
+if [ "$RUN" = true ]; then
+    echo "-------Step 3: Running DMPC for $INSTANCE_NAME"
+    cd $base_dir/scripts
+    if [ "$VIZ" = true ]; then
+        bash run_single_exp.sh $INSTANCE_NAME $SIMULATION_DURATION --viz
+    else
+        bash run_single_exp.sh $INSTANCE_NAME $SIMULATION_DURATION
+    fi
+fi

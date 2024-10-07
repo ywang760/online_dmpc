@@ -40,12 +40,14 @@ if [ -z "$SIMULATION_DURATION" ]
 then
     SIMULATION_DURATION=60
 fi
-echo "Start running the planner, simulation duration: $SIMULATION_DURATION"
-./run "../config/config_${INSTANCE_NAME}.json" $SIMULATION_DURATION ../${output_dir}/trajectories_${INSTANCE_NAME}.txt ../${output_dir}/stats_${INSTANCE_NAME}.json > ../${output_dir}/${INSTANCE_NAME}.log
+echo "Start running ${INSTANCE_NAME}, simulation duration: $SIMULATION_DURATION"
+./run ../config/config_${INSTANCE_NAME}.json $SIMULATION_DURATION ../${output_dir}/trajectories_${INSTANCE_NAME}.txt ../${output_dir}/stats_${INSTANCE_NAME}.json > ../${output_dir}/${INSTANCE_NAME}.log
 echo "Output saved in folder ${output_dir}"
 
 cd $base_dir
+python results/postprocess.py -o ${output_dir} -c config/config_${INSTANCE_NAME}.json
 
+cd $base_dir
 if [ "$VIZ" = true ]; then
     python results/plot_results.py -p "${output_dir}/trajectories_${INSTANCE_NAME}.txt" --save_name "DMPC_${INSTANCE_NAME}.mp4"
 fi
