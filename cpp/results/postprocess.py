@@ -121,14 +121,8 @@ all_solve_times = []
 for j_data in data:
     solve_times = j_data["robot_data"]["solve_times"]
     all_solve_times.append(solve_times)
-all_solve_times = np.array(all_solve_times)
-qp_solve_time = {
-    "mean": np.mean(all_solve_times),
-    "std": np.std(all_solve_times),
-    "max": np.max(all_solve_times),
-    "min": np.min(all_solve_times),
-}
-stats["qp_solve_time"] = qp_solve_time
+
+stats["qp_solve_time"] = all_solve_times
 
 with open(full_stats_path, "w") as f:
     json.dump(stats, f, indent=4)
