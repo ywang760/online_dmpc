@@ -7,13 +7,7 @@ import os
 # post process stats for num_robot_exp, for comparison plot with BVC and hierarchical
 
 num_robots = list(range(10, 100, 10))
-
-success_rates = []
-qp_solve_time_avgs = []
-qp_solve_time_stds = []
-makespans = []
-
-stats_dir_name = "."
+stats_dir_name = "stats"
 
 aggregated_data = defaultdict(list)
 
@@ -30,5 +24,5 @@ for stats in stats_list:
     for key, value in stats.items():
         aggregated_data[key].append(value)
 
-with open("dmpc_scalability_stats.json", "w") as f:
+with open("stats/dmpc_scalability_stats.json", "w") as f:
     json.dump(dict(aggregated_data), f, indent=4)

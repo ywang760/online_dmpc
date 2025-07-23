@@ -26,6 +26,9 @@ matlab/data/
 
 **/results/**/*.log
 **/results/**/*.txt
+**/results/**/*.json
 **/config/**/*.png
 **/config/**/*.stl
 **/config/**/*.json
+
+**/stats/**/*.json

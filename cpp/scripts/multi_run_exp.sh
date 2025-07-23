@@ -12,8 +12,14 @@ then
     SIMULATION_DURATION=60
 fi
 
-base_dir=$(dirname "$(pwd)")
+base_dir=$(dirname "$(pwd)") # The /cpp directory
 config_dir=${base_dir}/config
+
+if [ ! -f "${config_dir}/config_${INSTANCE_NAME}.json" ]; then
+    echo "Error: Config file '${config_dir}/config_${INSTANCE_NAME}.json' not found"
+    exit 1
+fi
+
 cd $base_dir
 
 if [ -d "bin" ] && [ -f "bin/run" ]; then
@@ -28,23 +34,29 @@ fi
 
 mkdir -p results/${INSTANCE_NAME}
 
-for exp_idx in {1..10}
+for exp_idx in {1..20}
 do
     cd $base_dir/bin
     output_dir="results/${INSTANCE_NAME}/exp_${exp_idx}"
     log_file_name="../${output_dir}/${INSTANCE_NAME}.log"
     stat_file_name="../${output_dir}/stats_${INSTANCE_NAME}.json"
     mkdir -p ../$output_dir
+    
     if [ ! -f $stat_file_name ]; then
         echo "Starting DMPC ${INSTANCE_NAME} experiment ${exp_idx}, simulation duration: $SIMULATION_DURATION"
-        ./run "../config/config_${INSTANCE_NAME}.json" $SIMULATION_DURATION "../${output_dir}/trajectories_${INSTANCE_NAME}.txt" $stat_file_name > $log_file_name
-        echo "Output saved in folder ${output_dir}"
+        if ./run "../config/config_${INSTANCE_NAME}.json" $SIMULATION_DURATION "../${output_dir}/trajectories_${INSTANCE_NAME}.txt" $stat_file_name > $log_file_name; then
+            echo "Output saved in folder ${output_dir}"
+            cd $base_dir
+            python results/postprocess.py -o ${output_dir} -c config/config_${INSTANCE_NAME}.json
+        else
+            echo "Warning: Experiment ${exp_idx} failed, check ${log_file_name}"
+        fi
     fi
-    cd $base_dir
-    python results/postprocess.py -o ${output_dir} -c config/config_${INSTANCE_NAME}.json
 done
 
 cd $base_dir
-python results/stats.py -i results/${INSTANCE_NAME}
+python results/stats.py -i results/${INSTANCE_NAME} 2>&1
+
+
 
 echo -e "--------------------END OF ${INSTANCE_NAME} EXPERIMENTS--------------------\n"

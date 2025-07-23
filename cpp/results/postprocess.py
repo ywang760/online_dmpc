@@ -30,7 +30,6 @@ config_path = args.config_path
 # output_dir_name = "Circle50/exp_1"
 # config_path = "../config/config_Circle50.json"
 
-
 def get_file(output_dir_name, prefix):
     files = [
         file for file in os.listdir(output_dir_name) if file.startswith(prefix)
