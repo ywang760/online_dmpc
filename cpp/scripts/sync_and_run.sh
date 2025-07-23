@@ -31,7 +31,7 @@ base_dir=$(dirname "$(pwd)")
 config_dir=${base_dir}/config
 
 echo "-------Step 1: Syncing $INSTANCE_NAME from largescale-planning repo"
-robot_config_dir="$LARGESCALE_DIR/lib/spawner/config_json/$INSTANCE_NAME"
+robot_config_dir="$LARGESCALE_DIR/lib/spawner/saved_config_json/tro/$INSTANCE_NAME"
 obs_config_dir="$LARGESCALE_DIR/lib/map/examples"
 
 if [ ! -d "$robot_config_dir" ]; then
