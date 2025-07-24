@@ -1,5 +1,5 @@
 {
-  "N": 4,               // Number of agents to be simulated
+  "N": 6,               // Number of agents to be simulated (including static obstacles)
   "Ncmd": 4,            // Number of agents to be controlled by algorithm, the last N-Ncmd agents
                         // act as static obstacles during the execution of trajectories
   "test": "default",    // possible values: -"default": initial and goal locations are po and pf
@@ -12,6 +12,8 @@
     [xo2, yo2, zo2],
     [xo3, yo3, zo3],
     [xo4, yo4, zo4],
+    [xo5, yo5, zo5], // static obstacle 1
+    [xo6, yo6, zo6]  // static obstacle 2
   ],
 
 // Goal locations in case of "default" test case. specified
@@ -20,6 +22,7 @@
     [xf2, yf2, zf2],
     [xf3, yf3, zf3],
     [xf4, yf4, zf4],
+    // Note that the last two agents are static obstacles and do not have goal locations
   ],
 
 // Bezier polynomial parameters
